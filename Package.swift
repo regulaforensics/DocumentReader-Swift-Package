@@ -7,9 +7,21 @@ let package = Package(
     products: [
         .library(
             name: "DocumentReader",
-            targets: ["DocumentReader"]),
+            targets: ["SDKDeps"]),
+    ],
+    dependencies: [
+        .package(name: "RegulaCommon", url: "https://github.com/regulaforensics/RegulaCommon-Swift-Package.git", .exact(Version(stringLiteral: "7.2.487"))),
     ],
     targets: [
-        .binaryTarget(name: "DocumentReader", url: "https://pods.regulaforensics.com/DocumentReader/6.9.3102/DocumentReader-6.9.3102.zip", checksum: "3342be204afbd36bfa5d6991ffb88ad3df4fc733a7ac34a28c46a824100461e6"),
+        .binaryTarget(name: "DocumentReader", url: "https://pods.regulaforensics.com/DocumentReader/7.1.3379/DocumentReader-7.1.3379.zip", checksum: "24f3ab840a064180a0e72ad3e22bd260e2595ecd8a4ec20b2e32b01965a9f976"),
+        .target(
+            name: "SDKDeps",
+            dependencies: [
+                .target(name: "FaceSDK"),
+                .product(name: "RegulaCommon", package: "RegulaCommon")
+            ],
+            path: "Sources",
+            sources: ["dummy.swift"]
+        )
     ]
 )
