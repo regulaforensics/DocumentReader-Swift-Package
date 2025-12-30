@@ -1,15 +1,29 @@
 // swift-tools-version:5.3
 import PackageDescription
 
+let packageName = "DocumentReader"
+
 let package = Package(
     name: "DocumentReader",
     platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "DocumentReader",
-            targets: ["DocumentReaderBeta"]),
+            targets: ["\(packageName)Common"]),
+    ],
+    dependencies: [
+        .package(name: "RegulaCommon", url: "https://github.com/regulaforensics/RegulaCommon-Swift-Package.git", .exact(Version(stringLiteral: "9.1.1844"))),
     ],
     targets: [
-        .binaryTarget(name: "DocumentReaderBeta", url: "https://pods.regulaforensics.com/DocumentReaderBeta/7.3/DocumentReaderBeta-7.3.zip", checksum: "f98706f10ac139630cc5f27285955a6eabf0fc736658c8a62098eb0b33e358e9"),
+        .binaryTarget(name: "DocumentReader", url: "https://pods.regulaforensics.com/DocumentReader/9.1.5702/DocumentReader-9.1.5702.zip", checksum: "712f9ad6843a6e54106d1665f2299cc9774f5443924bf00e94355df3690d7af1"),
+        .target(
+            name: "\(packageName)Common",
+            dependencies: [
+                .target(name: "DocumentReader"),
+                .product(name: "RegulaCommon", package: "RegulaCommon")
+            ],
+            path: "Sources",
+            sources: ["dummy.swift"]
+        )
     ]
 )
