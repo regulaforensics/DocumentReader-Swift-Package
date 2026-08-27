@@ -12,10 +12,10 @@ let package = Package(
             targets: ["\(packageName)Common"]),
     ],
     dependencies: [
-        .package(name: "RegulaCommon", url: "https://github.com/regulaforensics/RegulaCommon-Swift-Package.git", .exact(Version(stringLiteral: "9.8.2700-rc"))),
+        .package(name: "RegulaCommon", url: "https://github.com/regulaforensics/RegulaCommon-Swift-Package.git", .exact(Version(stringLiteral: "9.7.2701-rc"))),
     ],
     targets: [
-        .binaryTarget(name: "DocumentReader", url: "https://pods.regulaforensics.com/Stage/DocumentReaderStage/9.8.6866/DocumentReaderStage-9.8.6866.zip", checksum: "3b8293e7dc3ea51942b3db49540dc328a7bf9faa2c269ab0393cc676a2536ca2"),
+        .binaryTarget(name: "DocumentReader", url: "https://pods.regulaforensics.com/Stage/DocumentReaderStage/9.7.6867/DocumentReaderStage-9.7.6867.zip", checksum: "0a8672dbb46cf83bd324d9ec3163b579d0281fd0d2ecbcacbb7d99b91f195fc0"),
         .target(
             name: "\(packageName)Common",
             dependencies: [
