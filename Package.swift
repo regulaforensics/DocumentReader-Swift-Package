@@ -20,8 +20,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "DocumentReader",
-            url: "https://pods.regulaforensics.com/Stage/DocumentReaderStage/9.10.7282/DocumentReaderStage-9.10.7282.zip",
-            checksum: "67a3a23617e8c92fea74ec7e739087d6077b42f3412a01576a6302d5a905ce5e"),
+            url: "https://pods.regulaforensics.com/Stage/DocumentReaderStage/9.10.7286/DocumentReaderStage-9.10.7286.zip",
+            checksum: "1d56c543fb0f77fbd80c2e215646a15140c89499f3803e44fbafd001a2cb0c26"),
         .target(
             name: "\(packageName)Common",
             dependencies: [
