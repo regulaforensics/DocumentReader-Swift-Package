@@ -15,13 +15,13 @@ let package = Package(
         .package(
             name: "RegulaCommon",
             url: "https://github.com/regulaforensics/RegulaCommon-Swift-Package.git",
-            .exact("9.10.3010-nightly")),
+            .exact("9.10.3011-rc")),
     ],
     targets: [
         .binaryTarget(
             name: "DocumentReader",
-            url: "https://pods.regulaforensics.com/Nightly/DocumentReaderNightly/9.10.7316/DocumentReaderNightly-9.10.7316.zip",
-            checksum: "a779889676de98357036903dfff0a029dc1e177a07e42139307470b0c07782f1"),
+            url: "https://pods.regulaforensics.com/Stage/DocumentReaderStage/9.10.7317/DocumentReaderStage-9.10.7317.zip",
+            checksum: "3783b0336dfd4fd28ea4939faaf42c87d0e3b978d9e8264c67f0312767eb39c0"),
         .target(
             name: "\(packageName)Common",
             dependencies: [
